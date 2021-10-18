@@ -1,0 +1,682 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: 64.5%;
+}
+:root {
+    --color: #3b3737;
+    --font-poppin: "Poppins", sans-serif;
+    --font-arizona: "Arizonia", cursive;
+    --color-hover-orange: #ffa500;
+    --backgroun-color: linear-gradient(to right, #f3efef, #eeeeee);
+}
+.container {
+    height: 100vh;
+    background: linear-gradient(to right, #f3efef, #eeeeee);
+}
+.container .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    position: relative;
+    margin: auto;
+}
+.navbar {
+    padding: 20px 0;
+}
+.brand a {
+    color: var(--color);
+    font-size: 2rem;
+    font-family: var(--font-arizona);
+    text-transform: capitalize;
+    text-decoration: none;
+}
+.navlist {
+    display: flex;
+}
+.navlist .navitem {
+    margin-left: 15px;
+    list-style: none;
+}
+.navlist .navitem .navlink {
+    font-family: var(--font-poppin);
+    color: var(--color);
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+.navlist .navitem:hover .navlink {
+    color: var(--color-hover-orange);
+}
+.container .hero {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: var(--font-poppin);
+}
+.container .hero .left {
+    flex: 1;
+    padding: 50px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+}
+.left .intro {
+    font-size: 2rem;
+    display: block;
+    font-weight: 700;
+}
+
+.left .name {
+    font-size: 4rem;
+    font-weight: bolder;
+}
+.left .name .data {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.container .hero .right {
+    flex: 1;
+    height: 540px;
+}
+.container .hero .right img {
+    height: 100%;
+    object-position: bottom;
+    filter: drop-shadow(15px 5px 10px rgba(0, 0, 0, 0.1));
+}
+
+.menu {
+    display: none;
+}
+@media (max-width: 640px) {
+    
+.food-container .navbar .navlist .navitem .navlink ,.closebar ,.lifestyle-container  .navbar .navlist .navitem .navlink {
+    color:var(--color);
+}
+    html {
+        font-size: 55%;
+    }
+    .container {
+        height: auto;
+    }
+
+    .navlist {
+        display: none;
+        position: fixed;
+        background: #ccc;
+        top: 0;
+       right: 0;
+        clip-path: circle(0% at 100% 0);
+        height: 100%;
+        width: 50%;
+        z-index: 1;
+        transition: 2s linear;
+    }
+    .activenavbar {
+        display: block;
+        clip-path: circle(137.3% at 98% 3%);
+
+    }
+
+    .menu {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 15%;
+        right: 10%;
+    }
+    .menu .menubar,
+    .closebar {
+        font-size: 2rem;
+    }
+    .closebar {
+        display: none;
+    }
+
+    .navlist .navitem {
+        padding: 2rem 0;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+    .hero .left {
+        display: none;
+    }
+    .hero .right {
+        /* display: none; */
+    }
+}
+/* container End */
+
+.big-card {
+    min-height: 100vh;
+}
+.big-card .card {
+    width: 80%;
+    margin: 70px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+}
+.big-card .card .card-image {
+    background-image: url(image/brooke.jpg);
+    background-size: 100% 100%;
+    background-position: cover;
+    min-height: 70vh;
+}
+.big-card .card .card-image .card-data {
+    background: #000000;
+    height: auto;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--font-poppin);
+    color: #fff;
+    padding: 5px 0;
+}
+.big-card .card .card-image .card-data .date {
+    font-weight: 900;
+}
+.big-card .card .card-description {
+    min-height: 30vh;
+    padding: 30px 0;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    font-family: var(--font-poppin);
+}
+.big-card .card .card-description .heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.big-card .card .card-description .heading span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.big-card .card .card-description {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.big-card .card .readmore {
+    text-decoration: none;
+    color: var(--color);
+    font-size: 1rem;
+    transition: 0.2s linear;
+}
+
+.big-card .card .readmore:hover {
+    color: var(--color-hover-orange);
+}
+/* big card end */
+hr {
+    color: #666565;
+    opacity: 0.5;
+}
+
+.cards {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-auto-rows: auto;
+}
+.cards .responsive .card-data {
+    width: 60px;
+    background: #000;
+    text-align: center;
+    padding: 8px;
+    color: #fff;
+    font-family: var(--font-poppin);
+}
+.cards .responsive .card-description {
+    padding: 1.5rem 0;
+    font-family: var(--font-poppin);
+}
+.cards .responsive .heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color);
+    text-decoration: none;
+}
+.cards .responsive .desc {
+    display: block;
+    font-size: 1rem;
+    padding: 0.3rem 0 1rem 0;
+    font-weight: 400;
+}
+.cards .responsive .data .readmore {
+    display: block;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: var(--color);
+    font-size: 1rem;
+    transition: 0.2s linear;
+}
+.cards .responsive .data .readmore:hover {
+    color: var(--color-hover-orange);
+}
+
+.cards .div1 .card-image {
+    background: url("image/hangout.jpg");
+    height: 300px;
+    background-size: 100% 100%;
+    grid-area: 1 / 2 / 2 / 2;
+}
+
+.cards .div2 .card-image {
+    background: url("image/meditation.jpg");
+    height: 300px;
+    background-size: 100% 100%;
+    grid-area: 1 / 2 / 2 / 3;
+}
+.cards .div3 .card-image {
+    background: url("image/makeup.jpg");
+    height: 300px;
+    background-size: 100% 100%;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.cards .div4 .card-image {
+    background: url("image/grll.jpg");
+    height: 300px;
+    background-size: 100% 100%;
+    grid-area: 1 / 2 / 2 / 3;
+}
+/* cards end */
+
+.footer {
+    min-height: 50vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--font-poppin);
+    border-top: 1px solid #24242470;
+}
+
+.footer .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -20px;
+}
+
+.footer .icons .icon {
+    display: flex;
+
+    background: #ffffff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.footer .icons .icon ion-icon {
+    margin-left: 20px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.footer .icons .icon ion-icon:hover {
+    color: var(--color-hover-orange);
+}
+
+.footer .icons .hr1 {
+    height: 1px;
+    width: 100%px;
+    position: relative;
+    z-index: 1;
+    color: violet;
+}
+.footer .desc {
+    width: 50%;
+    text-align: center;
+}
+
+.footer .button a {
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    background: var(--color);
+    color: #fff;
+    transition: 0.2s linear;
+}
+.footer .button a:hover {
+    background: var(--color-hover-orange);
+}
+
+/* about uss page css */
+
+#aboutcss {
+    height: 100vh;
+    background: #fff;
+    position: relative;
+}
+.container .about-hero .about-data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: var(--font-poppin);
+    text-transform: capitalize;
+}
+.container .about-hero .about-data .intro {
+    font-weight: 900;
+    font-size: 5rem;
+}
+
+.container .about-hero .about-data .name {
+    font-weight: 900;
+    font-size: 2rem;
+    padding: 1rem 0 1.5rem 0;
+}
+
+.container .about-hero .about-data .data {
+    font-weight: bolder;
+    font-size: 1rem;
+}
+/* about contaner end */
+
+.about-wrapper {
+    background: var(--backgroun-color);
+}
+
+.about-wrapper .wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-wrapper .left,
+.right {
+    flex: 1;
+    padding: 2rem 0 0 0;
+}
+
+.about-wrapper .wrapper .left img {
+    transform: rotateY(180deg);
+}
+
+.about-wrapper .wrapper .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: var(--font-poppin);
+}
+.about-wrapper .wrapper .right h1 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.about-wrapper .wrapper .right h3 {
+    font-weight: 900;
+    padding: 1rem 0;
+}
+.about-wrapper .wrapper .right .about-logo {
+    font-family: var(--font-arizona);
+    padding: 1rem 0 0 0;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+/* about wrapper end */
+
+.contact {
+    min-height: 30vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--font-poppin);
+    font-weight: 600;
+}
+.contact .phone,
+.email,
+.address {
+    display: flex;
+    align-items: center;
+}
+.contact ion-icon {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+/*      about css start */
+
+/* fashion css start */
+
+.fashion-container {
+    height: 100vh;
+    color: #fff;
+}
+.bgimage {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("image/shopping.jpg");
+    background-size: cover;
+    transform: rotateY(180deg);
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.fashion-container .bgimage .navbar {
+    transform: rotateY(180deg);
+    color: #fff;
+}
+
+.fashion-container .bgimage .navbar .logoname {
+    color: #fff;
+}
+
+.fashion-container .navlist .navitem .navlink,
+.logoname {
+    font-family: var(--font-poppin);
+    color: #fff;
+}
+
+.fashion-hero {
+    transform: rotateY(180deg);
+    position: relative;
+    top: 35%;
+    height: 30%;
+    font-family: var(--font-poppin);
+}
+
+.big-card .card .fashion-card {
+    background-image: url("image/shopping.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 70vh;
+}
+.fashion-hero .fashion-data {
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fashion-hero .fashion-data .intro {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+/* food image */
+
+.food-container {
+    height: 100vh;
+    color: #fff;
+}
+.foodimage {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("image/lunch.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.food-container .foodimage .navbar {
+    color: #fff;
+}
+
+.food-hero {
+    transform: rotateY(180deg);
+    position: relative;
+    top: 35%;
+    height: 30%;
+    font-family: var(--font-poppin);
+}
+
+.big-card .card .food-image {
+    background-image: url("image/lunch.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 70vh;
+}
+
+.food-container .foodimage .navbar .logoname {
+    color: #fff;
+}
+
+.food-container .navlist .navitem .navlink,
+.logoname {
+    font-family: var(--font-poppin);
+    color: #fff;
+}
+
+.hero-food .data-food {
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.hero-food {
+    position: relative;
+    top: 35%;
+
+    height: 30%;
+    font-family: var(--font-poppin);
+}
+
+.hero-food .data-food .title {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+/* lifestyle */
+
+.lifestyle-container {
+    height: 100vh;
+    color: #fff;
+}
+.lifestyleimage {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("image/perfume.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.lifestyle-container .lifestyleimage .navbar .logoname {
+    color: #fff;
+}
+
+.lifestyle-container .navlist .navitem .navlink,
+.logoname {
+    font-family: var(--font-poppin);
+    color: #fff;
+}
+
+.big-card .card .lifestyle-image {
+    background-image: url("image/perfume.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 70vh;
+}
+
+.hero-lifestyle .data-lifestyle {
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.hero-lifestyle {
+    position: relative;
+    top: 35%;
+
+    height: 30%;
+    font-family: var(--font-poppin);
+}
+
+.hero-lifestyle .data-lifestyle .title {
+    font-size: 4rem;
+    font-weight: 900;
+}
+/* lifestyle end */
+.contact-container {
+    min-height: 80vh;
+    background: rgba(243, 239, 239, 0.664);
+    background: linear-gradient(to right, rgba(243, 239, 239, 0.5), rgba(243, 239, 239, 0.5)), url("image/model.png");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.left .introduction {
+    font-size: 1rem;
+    display: block;
+    font-weight: 700;
+}
+
+.contact-container .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+.navbar {
+    padding: 20px 0;
+}
+
+.contact-container .hero {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: var(--font-poppin);
+}
+.contact-container .hero .left {
+    flex: 1;
+    padding: 50px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+}
+.left .intro {
+    font-size: 2rem;
+    display: block;
+    font-weight: 700;
+}
+
+.left .name {
+    font-size: 4rem;
+    font-weight: bolder;
+}
